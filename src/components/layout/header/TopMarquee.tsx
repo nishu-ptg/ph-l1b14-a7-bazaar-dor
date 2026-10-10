@@ -1,10 +1,10 @@
 import Marquee from "react-marquee-text";
 import { fetchBazaarDorData } from "@/lib/api";
 import type { Product } from "@/types/bazaardor-data";
-import DataLoadError from "../shared/DataLoadError";
+import DataLoadError from "../../shared/DataLoadError";
 
 async function TopMarquee() {
-  const products: Product[] = await fetchBazaarDorData("/products2");
+  const products: Product[] = await fetchBazaarDorData("/products");
   if (!products) return <DataLoadError dataType="বাজারদর" />;
 
   const marqueeProducts = products.filter(
@@ -12,7 +12,7 @@ async function TopMarquee() {
   );
 
   return (
-    <div className="border-y border-zinc-200 py-3">
+    <div className="bg-white border-y border-zinc-200 py-3">
       <Marquee duration={30} pauseOnHover={true} direction="right">
         <div className="flex items-center gap-8 px-4">
           {marqueeProducts.map((product) => (

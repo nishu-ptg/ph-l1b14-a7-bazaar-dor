@@ -1,16 +1,13 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import Container from "../shared/Container";
+import Container from "../../shared/Container";
+import BengaliDate from "@/components/shared/BengaliDate";
+import { Suspense } from "react";
+import Loading from "@/components/shared/Loading";
 
 function TopBar() {
-  const date = new Date().toLocaleDateString("bn-BD", {
-    dateStyle: "full",
-  });
-
   return (
-    <div className="bg-gray-50 border-b border-grey-100">
+    <div className="border-b border-gray-100">
       <Container>
         <div className="navbar min-h-0 px-0 py-3">
           <div className="navbar-start">
@@ -28,7 +25,11 @@ function TopBar() {
 
               <div>
                 <h1 className="text-xl font-bold text-gray-800">বাজার দর</h1>
-                <p className="text-xs text-gray-500">{date}</p>
+                <p className="text-xs text-gray-500">
+                  <Suspense fallback={<Loading />}>
+                    <BengaliDate />
+                  </Suspense>
+                </p>
               </div>
             </Link>
           </div>
