@@ -1,10 +1,10 @@
 import { fetchBazaarDorData } from "@/lib/api";
-import { Product } from "@/types/bazaardor-data";
+import { IProduct } from "@/types/bazaardor-data";
 import DataLoadError from "../shared/DataLoadError";
 import ProductSection from "../products/ProductSection";
 
 async function Products() {
-  const allProducts: Product[] = await fetchBazaarDorData("/products");
+  const allProducts: IProduct[] = await fetchBazaarDorData("/products");
   if (!allProducts) return <DataLoadError dataType="পণ্য" />;
 
   const increasedProducts = allProducts

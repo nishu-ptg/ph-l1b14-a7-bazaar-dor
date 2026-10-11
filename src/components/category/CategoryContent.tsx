@@ -1,7 +1,8 @@
 import { fetchBazaarDorData } from "@/lib/api";
 import { ICategory } from "@/types/bazaardor-data";
-import DataLoadError from "../shared/DataLoadError";
+// import DataLoadError from "../shared/DataLoadError";
 import ProductSection from "../products/ProductSection";
+import { notFound } from "next/navigation";
 
 interface ICategoryContentProps {
   params: Promise<{ slug: string }>;
@@ -11,11 +12,12 @@ async function CategoryContent({ params }: ICategoryContentProps) {
   const { slug } = await params;
 
   const category: ICategory = await fetchBazaarDorData(`/categories/${slug}`);
-  if (!category) return <DataLoadError dataType="ক্যাটাগরি" />;
-  console.log("category", category);
+  // if (!category) return <DataLoadError dataType="ক্যাটাগরি" />;
+  if (!category) notFound();
+  // console.log("category", category);
 
   const products = await fetchBazaarDorData(`/products?category=${slug}`);
-  console.log("products", products);
+  // console.log("products", products);
   const productsCount = products ? products.length : 0;
 
   // return <div>{slug}</div>;

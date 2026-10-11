@@ -10,7 +10,7 @@ function ProductCard({ product }: IProductCardProps) {
   const isDown = product.change.dir === "down";
 
   return (
-    <Link href="/">
+    <Link href={`/product/${product.slug}`}>
       <div className="card bg-base-100 border border-zinc-200 rounded-2xl">
         <div className="card-body p-4">
           <div className="flex items-start gap-3">
