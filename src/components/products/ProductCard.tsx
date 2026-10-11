@@ -1,8 +1,8 @@
 import Link from "next/link";
-import type { Product } from "@/types/bazaardor-data";
+import { IProduct } from "@/types/bazaardor-data";
 
 interface IProductCardProps {
-  product: Product;
+  product: IProduct;
 }
 
 function ProductCard({ product }: IProductCardProps) {

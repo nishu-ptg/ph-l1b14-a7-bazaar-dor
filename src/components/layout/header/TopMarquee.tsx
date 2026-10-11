@@ -1,10 +1,10 @@
 import Marquee from "react-marquee-text";
 import { fetchBazaarDorData } from "@/lib/api";
-import type { Product } from "@/types/bazaardor-data";
+import { IProduct } from "@/types/bazaardor-data";
 import DataLoadError from "../../shared/DataLoadError";
 
 async function TopMarquee() {
-  const products: Product[] = await fetchBazaarDorData("/products");
+  const products: IProduct[] = await fetchBazaarDorData("/products");
   if (!products) return <DataLoadError dataType="বাজারদর" />;
 
   const marqueeProducts = products.filter(

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="">
       <Banner />
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading text="পণ্য লোড হচ্ছে..." />}>
         <Products />
       </Suspense>
     </div>

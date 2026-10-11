@@ -46,11 +46,13 @@ async function Products() {
         products={increasedProducts}
       />
 
-      <ProductSection
-        title="সব পণ্য"
-        subtitle={`মোট ${allProducts.length}টি পণ্য দেখানো হচ্ছে`}
-        products={allProducts}
-      />
+      <div id="all-products">
+        <ProductSection
+          title="সব পণ্য"
+          subtitle={`মোট ${allProducts.length}টি পণ্য দেখানো হচ্ছে`}
+          products={allProducts}
+        />
+      </div>
     </div>
   );
 }

@@ -1,11 +1,11 @@
-export type Category = {
+export interface ICategory {
   id: string;
   slug: string;
   nameBn: string;
   icon: string;
-};
+}
 
-export type Product = {
+export interface IProduct {
   id: number;
   slug: string;
   nameBn: string;
@@ -22,4 +22,4 @@ export type Product = {
     dir: "up" | "down" | "flat";
     pct: number;
   };
-};
+}

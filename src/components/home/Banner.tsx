@@ -1,5 +1,6 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import BengaliDate from "../shared/BengaliDate";
 import { Suspense } from "react";
 import Loading from "../shared/Loading";
@@ -22,9 +23,17 @@ function Banner() {
             চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম। বাজারভিত্তিক
             বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।
           </p>
-          <Link href="/" className="btn bg-green-700 text-white rounded-xl">
+          <button
+            className="btn bg-green-700 text-white rounded-xl"
+            onClick={() =>
+              document.getElementById("all-products")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              })
+            }
+          >
             সব পণ্য দেখুন
-          </Link>
+          </button>
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import ProductCard from "./ProductCard";
-import type { Product } from "@/types/bazaardor-data";
+import { IProduct } from "@/types/bazaardor-data";
 
 interface IProductSectionProps {
   title?: ReactNode;
   subtitle?: ReactNode;
-  products: Product[];
+  products: IProduct[];
 }
 
 function ProductSection({ title, subtitle, products }: IProductSectionProps) {
